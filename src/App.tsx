@@ -1,22 +1,20 @@
 import './App.css'
-import { FortuneDialog } from '@/components/FortuneDialog'
+import { AboutDialog } from './components/AboutDialog'
+import { OracleCard } from './components/OracleCard'
 
 function App() {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col items-center justify-center gap-8">
+      <div className='app-container'>
         <header>
-          <h1>Oráculo das Galáxias</h1>
+          <img src='./src/assets/logo.png' alt='Logo do Oráculo das Galáxias' className='logo' />
         </header>
-        <main className="h-full w-full flex flex-col items-center justify-center gap-8">
-          <FortuneDialog
-          message="Você encontrará um aliado inesperado em sua jornada."
-          figure="./src/assets/exemple.jpg"
-        />
+        <main>
+          <OracleCard/>
         </main>
-        <footer className="text-right p-4">
-          <p>Desenvolvido por Franklin L. Tomich</p>
+        <footer>
+          <AboutDialog/>
         </footer>
       </div>
     </>
