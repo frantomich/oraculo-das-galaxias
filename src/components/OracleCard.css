@@ -23,6 +23,14 @@
     @apply w-full bg-[#9fe9ec] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
 }
 
+.oracle-card-select-content {
+    @apply w-full bg-[#9fe9ec] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+}
+
+.oracle-card-select-item {
+    @apply border-none text-gray-800 hover:bg-violet-300 hover:text-shadow-sm hover:shadow-mist-300;
+}
+
 .oracle-card-action-field {
     @apply w-full;
 }

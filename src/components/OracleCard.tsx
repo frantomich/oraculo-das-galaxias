@@ -69,11 +69,11 @@ export function OracleCard() {
                 <SelectTrigger id='sistema' name='sistema' className='oracle-card-select-trigger' aria-invalid={invalid}>
                   <Orbit/><SelectValue placeholder='Selecione' />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className='oracle-card-select-content'>
                   <SelectGroup>
                     {
                       system_list.map((system, index) => (
-                        <SelectItem key={index} value={system}>
+                        <SelectItem className='oracle-card-select-item' key={index} value={system}>
                           {system}
                         </SelectItem>
                       ))

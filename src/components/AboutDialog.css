@@ -8,9 +8,9 @@
 }
 
 .about-dialog-content {
-    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none;
+    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none gap-4 p-6;
 }
 
 .about-dialog-body {
-    @apply flex flex-row items-center gap-6 p-4;   
+    @apply flex flex-col gap-4;   
 }
