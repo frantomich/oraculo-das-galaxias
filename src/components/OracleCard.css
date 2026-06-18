@@ -4,7 +4,7 @@
 @import '@fontsource-variable/geist';
 
 .oracle-card {
-    @apply w-full max-w-sm bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none;
+    @apply w-full max-w-sm bg-[#f8aef6]/50 backdrop-blur-xl shadow-lg shadow-mist-600 border-none;
 }
 
 .oracle-card-description {
@@ -20,15 +20,15 @@
 }
 
 .oracle-card-select-trigger {
-    @apply w-full bg-[#9fe9ec] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+    @apply w-full bg-linear-to-br from-[#9fe9ec] to-[#41cfaf] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300 text-gray-900;
 }
 
 .oracle-card-select-content {
-    @apply w-full bg-[#9fe9ec] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+    @apply w-full bg-linear-to-br from-[#9fe9ec] to-[#41cfaf] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
 }
 
 .oracle-card-select-item {
-    @apply border-none text-gray-800 hover:bg-violet-300 hover:text-shadow-sm hover:shadow-mist-300;
+    @apply border-none text-gray-800 hover:bg-linear-to-br from-violet-300 to-violet-500 hover:text-shadow-sm hover:shadow-mist-300;
 }
 
 .oracle-card-action-field {

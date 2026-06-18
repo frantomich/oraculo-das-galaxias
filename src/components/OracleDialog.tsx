@@ -26,7 +26,7 @@ export function OracleDialog({destination, isInvalid}: OracleDialogProps) {
   const fetchResponse = async () => {
     setResponse('Consultando as estrelas...')
     try {
-      setResponse(await oracle(destination))
+      setResponse(await oracle(destination).then(response => response.text))
     } catch (error) {
       console.error('Erro ao buscar a resposta:', error)
       setResponse('Há muitas perturbações na ordem cósmica do universo no momento. Tente voltar mais tarde para descobrir o que o destino reserva para você, jovem padawan.')

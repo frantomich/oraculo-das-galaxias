@@ -4,13 +4,25 @@
 @import '@fontsource-variable/geist';
 
 .about-dialog-trigger {
-    @apply cursor-pointer text-shadow-md text-shadow-pink-600;
+    @apply cursor-pointer text-lg text-shadow-lg text-shadow-violet-500 hover:-translate-1 hover:scale-105 transition-transform duration-300 ease-in-out;
 }
 
 .about-dialog-content {
-    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none gap-4 p-6;
+    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none p-6;
 }
 
 .about-dialog-body {
     @apply flex flex-col gap-4;   
+}
+
+.about-dialog-description {
+    @apply flex flex-col gap-2 text-gray-900;
+}
+
+.about-dialog-footer {
+    @apply flex flex-col gap-2 text-gray-900;
+}
+
+.about-dialog-hyperlink {
+    @apply text-violet-700 underline;
 }

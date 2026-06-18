@@ -4,11 +4,11 @@
 @import '@fontsource-variable/geist';
 
 .oracle-dialog-trigger {
-    @apply w-full bg-[#fce75e] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+    @apply w-full bg-linear-to-br from-[#fce75e] to-[#53df4d] shadow-sm shadow-amber-400 border-none hover:shadow-[0_0_15px] transition-shadow duration-300 text-gray-900;
 }
 
 .oracle-dialog-content {
-    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none p-6;
+    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-xl shadow-lg shadow-mist-600 border-none p-6;
 }
 
 .oracle-dialog-title {
