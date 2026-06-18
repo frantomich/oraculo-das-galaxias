@@ -1,6 +1,6 @@
 import './App.css'
-import { AboutDialog } from './components/AboutDialog'
-import { OracleCard } from './components/OracleCard'
+import { AboutDialog } from '@/components/AboutDialog'
+import { OracleCard } from '@/components/OracleCard'
 
 function App() {
 

@@ -1,20 +1,28 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/geist';
 
 .oracle-card {
     @apply w-full max-w-sm bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none;
 }
 
-.oracle-description {
+.oracle-card-description {
     @apply text-sm text-gray-900;
 }
 
-.oracle-form {
+.oracle-card-form {
     @apply flex flex-row items-center justify-center gap-4;
 }
 
-.sel {
+.oracle-card-select-field {
+    @apply w-full;
+}
+
+.oracle-card-select-trigger {
     @apply w-full bg-[#9fe9ec] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+}
+
+.oracle-card-action-field {
+    @apply w-full;
 }

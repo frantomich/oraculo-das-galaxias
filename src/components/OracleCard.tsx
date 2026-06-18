@@ -1,8 +1,9 @@
 import './OracleCard.css'
+import { useState } from 'react'
+import { OracleDialog } from '@/components/OracleDialog'
 
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -12,20 +13,13 @@ import {
 
 import {
   Field,
-  FieldContent,
   FieldDescription,
-  FieldError,
   FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-  FieldTitle,
+  FieldLabel
 } from '@/components/ui/field'
 
 import {
   Select,
-  SelectLabel,
   SelectContent,
   SelectGroup,
   SelectItem,
@@ -33,49 +27,69 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { FortuneDialog } from '@/components/FortuneDialog'
-
-import { Orbit } from 'lucide-react';
+import { Orbit } from 'lucide-react'
 
 export function OracleCard() {
+
+  const system_list: string[] = [
+    "Alpha Centauri",
+    "Sistema Tatoo",
+    "Zeta Reticuli",
+    "Canopus",
+    "40 Eridani",
+    "Epsilon Eridani",
+    "Vega",
+    "Wolf 359",
+    "Sistema Sol",
+    "Ceti Alpha"
+  ]
+
+  const [destination, setDestination] = useState<string>('')
+
+  const [invalid, setInvalid] = useState<boolean>(false)
+
+  const isInvalid = () => {
+    setInvalid(true)
+  }
+
   return (
     <>
       <Card className='oracle-card'>
         <CardHeader>
           <CardTitle>Oráculo das Galáxias</CardTitle>
-          <CardDescription className='oracle-description'>
+          <CardDescription className='oracle-card-description'>
             Selecione o destino de sua próxima grande aventura pela galáxia e receba concelhos de valiosa sabedoria cósmica.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <FieldGroup className='oracle-form'>
-            <Field className='w-full'>
+          <FieldGroup className='oracle-card-form'>
+            <Field className='oracle-card-select-field' data-invalid={invalid}>
               <FieldLabel htmlFor='sistema'>Onde será a sua aventura?</FieldLabel>
-              <Select required>
-                <SelectTrigger id='sistema' name='sistema' className='sel'>
+              <Select required onValueChange={(value) => {setDestination(value); setInvalid(false)}} defaultValue=''>
+                <SelectTrigger id='sistema' name='sistema' className='oracle-card-select-trigger' aria-invalid={invalid}>
                   <Orbit/><SelectValue placeholder='Selecione' />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value='sol'>Sol</SelectItem>
-                    <SelectItem value='ori'>Orion</SelectItem>
-                    <SelectItem value='pro'>Próxima Centauri</SelectItem>
-                    <SelectItem value='bet'>Betelgeuse</SelectItem>
-                    <SelectItem value='omi'>Omicron</SelectItem>
+                    {
+                      system_list.map((system, index) => (
+                        <SelectItem key={index} value={system}>
+                          {system}
+                        </SelectItem>
+                      ))
+                    }
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              <FieldDescription className='text-gray-800'>
+              <FieldDescription className={invalid ? 'text-red-500' : 'text-gray-800'}>
                 Escolha o sistema estelar onde ocorrerá a sua jornada.
               </FieldDescription>
             </Field>
           </FieldGroup>
         </CardContent>
         <CardFooter>
-          <Field className='w-full'>
-            <FortuneDialog
-            message='Você encontrará um aliado inesperado em sua jornada.'
-            figure='./src/assets/exemple.jpg'/>
+          <Field className='oracle-card-action-field'>
+            <OracleDialog destination={destination} isInvalid={isInvalid} />
           </Field>
         </CardFooter>
       </Card>

@@ -1,8 +1,16 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/geist';
+
+.about-dialog-trigger {
+    @apply cursor-pointer text-shadow-md text-shadow-pink-600;
+}
 
 .about-dialog-content {
     @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none;
+}
+
+.about-dialog-body {
+    @apply flex flex-row items-center gap-6 p-4;   
 }

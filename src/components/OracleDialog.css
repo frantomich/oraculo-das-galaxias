@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/geist';
+
+.oracle-dialog-trigger {
+    @apply w-full bg-[#fce75e] shadow-sm shadow-mist-600 border-none hover:shadow-[0_0_15px] transition-shadow duration-300;
+}
+
+.oracle-dialog-content {
+    @apply w-full sm:max-w-md bg-[#f8aef6]/50 backdrop-blur-lg shadow-lg shadow-mist-600 border-none p-6;
+}
+
+.oracle-dialog-title {
+    @apply text-center font-semibold text-gray-900;
+}
+
+.oracle-dialog-body {
+    @apply flex flex-col items-center justify-center gap-6 p-4;
+}
+
+.oracle-dialog-image {
+    @apply w-42 h-32;
+}
+
+.oracle-dialog-response {
+    @apply text-center text-sm text-gray-900;
+}
