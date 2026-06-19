@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Oráculo das Galáxias
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um pequeno aplicativo web interativo que gera previsões e conselhos cósmicos para aventuras espaciais usando a API Gemini (Google GenAI). Construído com React + TypeScript e empacotado com Vite.
 
-Currently, two official plugins are available:
+**Principais características**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Gera respostas curtas e enigmáticas através do modelo Gemini (via `src/services/oracle.ts`).
+- UI leve em React com componentes reutilizáveis em `src/components`.
+- Estilização com Tailwind / CSS local e utilitários em `src/lib`.
 
-## React Compiler
+**Stack**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Bundler: Vite
+- Frontend: React + TypeScript
+- Estilos: TailwindCSS
+- IA: Google GenAI (Gemini 3.5 Flash)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Instalação**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Instale as dependências:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Crie um arquivo `.env` na raiz com a sua chave Gemini:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+VITE_GEMINI_API_KEY=sk-... (sua chave aqui)
+```
+
+3. Rode em modo desenvolvimento:
+
+```
+npm run dev
+```
+
+**Scripts úteis**
+
+- `npm run dev` — inicia o servidor de desenvolvimento (Vite)
+- `npm run build` — compila o projeto para produção
+- `npm run preview` — serve a build para preview
+- `npm run lint` — roda o ESLint
+
+**Como usar**
+
+1. Abra o app no navegador (geralmente `http://localhost:5173`).
+2. Selecione um sistema estelar no cartão principal (`src/components/OracleCard.tsx`).
+3. Clique em "Revelar!" para abrir o diálogo que consulta o Oráculo e exibe a previsão (`src/components/OracleDialog.tsx`).
+
+As chamadas à API estão centralizadas em `src/services/oracle.ts` (usa `@google/genai`).
+
+**Estrutura importante**
+
+- `src/components/OracleCard.tsx` — formulário e seleção do destino.
+- `src/components/OracleDialog.tsx` — diálogo que exibe a resposta do oráculo.
+- `src/services/oracle.ts` — integração com Gemini (configuração do prompt).
+- `src/lib/utils.ts` — utilitários de classe CSS (`cn`).
+
+**Observações / Segurança**
+
+- A chave da API deve ser mantida privada (não comitar `.env` em repositórios públicos).
+- O prompt system em `oracle.ts` limita as respostas a 50 palavras e força português brasileiro.
+
+**Contribuições**
+
+Contribuições são bem-vindas. Abra uma issue ou envie um pull request com pequenas melhorias, documentação ou correções.
