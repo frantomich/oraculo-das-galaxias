@@ -1,6 +1,6 @@
 # Oráculo das Galáxias
 
-Um pequeno aplicativo web interativo que gera previsões e conselhos cósmicos para aventuras espaciais usando a API Gemini (Google GenAI). Construído com React + TypeScript e empacotado com Vite.
+Um pequeno aplicativo web interativo que gera previsões e conselhos cósmicos para aventureiros espaciais usando a API Gemini (Google GenAI).
 
 **Principais características**
 
@@ -27,7 +27,7 @@ npm install
 2. Crie um arquivo `.env` na raiz com a sua chave Gemini:
 
 ```
-VITE_GEMINI_API_KEY=sk-... (sua chave aqui)
+VITE_GEMINI_API_KEY="sua chave aqui"
 ```
 
 3. Rode em modo desenvolvimento:
@@ -41,7 +41,6 @@ npm run dev
 - `npm run dev` — inicia o servidor de desenvolvimento (Vite)
 - `npm run build` — compila o projeto para produção
 - `npm run preview` — serve a build para preview
-- `npm run lint` — roda o ESLint
 
 **Como usar**
 
@@ -62,7 +61,3 @@ As chamadas à API estão centralizadas em `src/services/oracle.ts` (usa `@googl
 
 - A chave da API deve ser mantida privada (não comitar `.env` em repositórios públicos).
 - O prompt system em `oracle.ts` limita as respostas a 50 palavras e força português brasileiro.
-
-**Contribuições**
-
-Contribuições são bem-vindas. Abra uma issue ou envie um pull request com pequenas melhorias, documentação ou correções.
